@@ -1,6 +1,7 @@
 {
   "name": "styled-props",
   "version": "0.0.1",
+  "description": "Small helper to style your components with style.",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
   "module": "src/index.js",
