@@ -10,7 +10,7 @@
     "lint": "eslint src __test__",
     "compile": "babel -d lib src",
     "compile:watch": "babel -w -d lib src",
-    "prepublish": "npm run compile"
+    "prepublish": "npm test; npm run compile"
   },
   "repository": {
     "type": "git",
@@ -46,9 +46,11 @@
     "eslint-plugin-react": "^6.9.0",
     "flow-bin": "^0.37.4",
     "jest": "^18.1.0",
+    "publish-please": "^2.2.0",
     "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
     "styled-components": "^1.2.1"
-  }
+  },
+  "dependencies": {}
 }
