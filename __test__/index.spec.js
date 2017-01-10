@@ -1,4 +1,5 @@
 /* eslint-env jest */
+/* eslint-disable no-console */
 
 import styledProps from '../src';
 
@@ -16,13 +17,11 @@ const colors = {
 
 let consoleError;
 beforeAll(() => {
-  // eslint-disable-next-line no-console
   consoleError = console.error;
-  console.error = (msg) => { throw new Error(msg); }
+  console.error = (msg) => { throw new Error(msg); };
 });
 
 afterAll(() => {
-  // eslint-disable-next-line no-console
   console.error = consoleError;
 });
 
@@ -73,4 +72,16 @@ test('should map into fallback values for incorret values', () => {
 
   expect(styledProps(fonts, 'size')(props)).toBe(20);
   expect(styledProps(colors, 'color')(props)).toBe('blue');
+});
+
+test('should warn about incorret fallback prop', () => {
+  const props = {
+    huge: true,
+    pink: true,
+    _size: 'medium',
+    _color: 'blue',
+  };
+
+  expect(() => styledProps(fonts, 'size')(props)).toThrowError(/size/);
+  expect(() => styledProps(colors, 'color')(props)).toThrowError(/color/);
 });

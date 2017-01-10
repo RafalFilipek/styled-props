@@ -5,7 +5,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "lint": "eslint",
+    "lint": "eslint src __test__",
     "compile": "babel -d lib src",
     "compile:watch": "babel -w -d lib src"
   },
