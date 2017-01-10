@@ -2,22 +2,35 @@
   "name": "styled-props",
   "version": "0.0.1",
   "main": "lib/index.js",
+  "jsnext:main": "src/index.js",
+  "module": "src/index.js",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
     "lint": "eslint src __test__",
     "compile": "babel -d lib src",
-    "compile:watch": "babel -w -d lib src"
+    "compile:watch": "babel -w -d lib src",
+    "prepublish": "npm run compile"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafalFilipek/styled-props.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RafalFilipek/styled-props/issues"
+  },
+  "author": "Rafał Filipek <rafal.filipek@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "css-in-js"
+  ],
   "jest": {
     "unmockedModulePathPatterns": [
       "node_modules/react/",
       "node_modules/enzyme/"
     ]
   },
-  "repository": "git@github.com:RafalFilipek/styled-props.git",
-  "author": "Rafał Filipek <rafal.filipek@gmail.com>",
-  "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-eslint": "^7.1.1",
