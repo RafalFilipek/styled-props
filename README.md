@@ -58,7 +58,19 @@ export const sizes = {
 
 > `styles.js` file is cool because you can access them anywhere! You can also generate some style guides and of course keep all information in one place.
 
+
+
 So how can I help? `styled-props` package exports single function called `styledProps`. You can use it all your components.
+
+### Installation
+
+```
+yarn add styled-props
+
+// or
+
+npm install styled-props
+```
 
 ### Basic usage
 
@@ -75,7 +87,7 @@ const Button = styled.button`
   background: ${styledProps(backgrounds)};
   color: ${styledProps(colors)};
   padding: ${styledProps(sizes.paddings)}px;
-  border-radius: ${styledProps(sizes.paddings)}px;
+  border-radius: ${styledProps(sizes.borderRadius)}px;
 
   font-size: 1em;
   margin: 1em;
