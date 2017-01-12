@@ -5,6 +5,8 @@ node_js:
 cache:
   directories:
   - node_modules
+after_success:
+  - node_modules/.bin/codecov
 branches:
   only:
   - master
