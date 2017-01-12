@@ -27,6 +27,8 @@
     "css-in-js"
   ],
   "jest": {
+    "collectCoverage": true,
+    "coverageDirectory": "./.coverage",
     "unmockedModulePathPatterns": [
       "node_modules/react/",
       "node_modules/enzyme/"

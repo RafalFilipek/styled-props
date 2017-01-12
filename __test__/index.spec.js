@@ -43,15 +43,6 @@ test('should map props into values', () => {
   expect(styledProps(colors)(props)).toBe('blue');
 });
 
-test('should warn about multiple values in map', () => {
-  const props = {
-    medium: true,
-    big: true,
-  };
-
-  expect(() => styledProps(fonts)(props)).toThrowError(/medium, big/);
-});
-
 test('should return undefined for incorret values', () => {
   const props = {
     huge: true,
@@ -74,7 +65,22 @@ test('should map into fallback values for incorret values', () => {
   expect(styledProps(colors, 'color')(props)).toBe('blue');
 });
 
-test('should warn about incorret fallback prop', () => {
+test('should warn about multiple values in map in DEV mode', () => {
+  const props = {
+    medium: true,
+    big: true,
+  };
+
+  expect(() => styledProps(fonts)(props)).toThrowError(/medium, big/);
+
+  process.env.NODE_ENV = 'production';
+
+  expect(() => styledProps(fonts)(props)).not.toThrowError(/medium, big/);
+
+  process.env.NODE_ENV = '';
+});
+
+test('should warn about incorret fallback prop in DEV mode', () => {
   const props = {
     huge: true,
     pink: true,
@@ -84,4 +90,11 @@ test('should warn about incorret fallback prop', () => {
 
   expect(() => styledProps(fonts, 'size')(props)).toThrowError(/size/);
   expect(() => styledProps(colors, 'color')(props)).toThrowError(/color/);
+
+  process.env.NODE_ENV = 'production';
+
+  expect(() => styledProps(fonts, 'size')(props)).not.toThrowError();
+  expect(() => styledProps(colors, 'color')(props)).not.toThrowError();
+
+  process.env.NODE_ENV = '';
 });

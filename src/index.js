@@ -23,10 +23,8 @@ const styledProps: StyledPropsFunction = (map, fallback) => ((props) => {
     if (process.env.NODE_ENV !== 'production') {
       // eslint-disable-next-line no-console
       console.error(`[styledProps] Unknown fallback prop provided: ${fallback}.`);
-      return undefined;
     }
   }
-  return undefined;
 });
 
 export default styledProps;

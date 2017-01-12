@@ -60,7 +60,7 @@ export const sizes = {
 
 
 
-So how can I help? `styled-props` package exports single function called `styledProps`. You can use it all your components.
+So how can I help? `styled-props` package exports single function called `styledProps`. You can use it in all your components.
 
 ### Installation
 
