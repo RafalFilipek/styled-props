@@ -11,7 +11,9 @@
     "lint": "eslint src __test__",
     "compile": "babel -d lib src",
     "compile:watch": "babel -w -d lib src",
-    "prepublish": "npm test; npm run compile"
+    "clean": "rm -rf lib",
+    "prepublish": "npm test; npm run compile",
+    "release": "npm run clean && release && publish-please"
   },
   "repository": {
     "type": "git",
@@ -53,6 +55,7 @@
     "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
+    "release": "^1.1.2",
     "styled-components": "^1.2.1"
   },
   "dependencies": {}
