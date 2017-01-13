@@ -12,8 +12,7 @@
     "compile": "babel -d lib src",
     "compile:watch": "babel -w -d lib src",
     "clean": "rm -rf lib",
-    "prepublish": "npm test; npm run compile",
-    "release": "npm run clean && release && publish-please"
+    "prepublish": "npm run clean && npm test && npm run compile"
   },
   "repository": {
     "type": "git",
