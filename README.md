@@ -32,20 +32,20 @@ But your application is probably much bigger than single button. And you want to
 ```js
 // styles.js
 
-export const backgrounds = {
+export const background = {
   primary: '#F5F5F5',
   danger: '#DD2C00',
   success: '#7CB342',
   info: '#BBDEFB',
 };
 
-export const colors = {
+export const color = {
   primary: '#263238',
   default: '#FAFAFA',
 };
 
-export const sizes = {
-  paddings: {
+export const size = {
+  padding: {
     small: 10,
     medium: 20,
     big: 30,
@@ -59,7 +59,7 @@ export const sizes = {
 
 > `styles.js` file is cool because you can access them anywhere! You can also generate some style guides and of course keep all information in one place.
 
-
+> **IMPORTANT** It is better to use singular forms for keys. In `bind` mode keys are used to set fallbacks so `color` is better than `colors` as a prop.
 
 So how can I help? `styled-props` package exports single function called `styledProps`. You can use it in all your components.
 
@@ -79,16 +79,16 @@ npm install styled-props
 import styledProps from 'styled-props';
 import styled from 'styled-components';
 import {
-  backgrounds,
-  colors,
-  sizes,
+  background,
+  color,
+  size,
 } from './styles.js';
 
 const Button = styled.button`
-  background: ${styledProps(backgrounds)};
-  color: ${styledProps(colors)};
-  padding: ${styledProps(sizes.paddings)}px;
-  border-radius: ${styledProps(sizes.borderRadius)}px;
+  background: ${styledProps(background)};
+  color: ${styledProps(color)};
+  padding: ${styledProps(size.padding)}px;
+  border-radius: ${styledProps(size.borderRadius)}px;
 
   font-size: 1em;
   margin: 1em;
@@ -113,23 +113,69 @@ Everything is based on props. As we know in React you can set `defaultProps` for
 
 ```jsx
 const Button = styled.button`
-  color: ${styledProps(colors, 'color')}
+  color: ${styledProps(color, 'color')}
 `;
 Button.defaultProps = {
   color: 'white',
 };
 ```
 
-If you will not provide `primary` or `default` property for Button component `styledProps` function will check value of `color` property and use it as a key in `colors` map. In our case default color is `colors.white`. This is quite cool because you can also set styles the old way:
+If you will not provide `primary` or `default` property for Button component `styledProps` function will check value of `color` property and use it as a key in `color` map. In our case default color is `color.white`. This is quite cool because you can also set styles the old way:
 
 ```jsx
 <Button color="primary" size="big" />
+```
+
+### Bind
+
+When your component is full of dynamic styles you can ( from `v0.1.0`) use `bind` options to simplify things.
+
+```js
+//styles.js
+export default {
+  color: {
+    red: '#990000',
+    white: '#ffffff',
+    black: '#000000',
+  },
+  size: {
+    small: 10,
+    medium: 20,
+    big: 30,
+  }
+}
+```
+
+```jsx
+import styles from './styles';
+import { bindStyles } from 'styled-props';
+
+// or alternatively
+
+// import { bind } from 'styled-props';
+
+s = bindStyles(styles);
+
+export default styled.button`
+  color: ${s.color};
+  padding: ${s.size};
+`;
+```
+
+> As you can see `bind` is available as `bind` or `bindStyles` in case you're using lodash or any other library to for e.g bind functions context.
+
+Each key in `s` provides `styledProps` function. Also default value is set automaticly with `key` from map.
+
+```
+s.color === styledProps(styles.color, 'color');
 ```
 
 ### API
 
 ```
 styledProps(stylesMap:Object, [fallbackKey]:string)
+
+styledPropsBind(collectionsMap:Object)
 ```
 
 ### [Demo](http://www.webpackbin.com/NkSd_zRBM)
