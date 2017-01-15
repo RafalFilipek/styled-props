@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/RafalFilipek/styled-props/master/loog.png)
+![](https://raw.githubusercontent.com/RafalFilipek/styled-props/master/logo.png)
 
 ---
 
