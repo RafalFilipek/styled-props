@@ -63,6 +63,13 @@ export const size = {
 
 So how can I help? `styled-props` package exports single function called `styledProps`. You can use it in all your components.
 
+### TL;DR; Examples
+
+ - [Basic usage](http://www.webpackbin.com/N1EKUqgvG)
+ - [Default props](http://www.webpackbin.com/41b0R5lPf)
+ - [Bind](http://www.webpackbin.com/VJsMMoePf)
+
+
 ### Installation
 
 ```
