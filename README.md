@@ -123,7 +123,7 @@ const Button = styled.button`
   color: ${styledProps(color, 'color')}
 `;
 Button.defaultProps = {
-  color: 'white',
+  color: 'default',
 };
 ```
 
