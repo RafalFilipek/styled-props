@@ -60,7 +60,7 @@
     "react-addons-test-utils": "^15.5.1",
     "react-dom": "^15.5.3",
     "release": "^1.1.7",
-    "styled-components": "^1.4.4"
+    "styled-components": "^2.0.0"
   },
   "dependencies": {}
 }
