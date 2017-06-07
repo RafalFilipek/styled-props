@@ -1,15 +1,22 @@
 // @flow
 
-type PropsLike = { [key:string]: any };
-type MapperFunction = (props:PropsLike) => any;
-export type StyledPropsFunction = (map:PropsLike, fallback?:string) => MapperFunction;
+type PropsLike = { [key: string]: any };
+type MapperFunction = (props: PropsLike) => any;
+export type StyledPropsFunction = (
+  map: PropsLike,
+  fallback?: string
+) => MapperFunction;
 
-const styledProps:StyledPropsFunction = (map, fallback) => ((props) => {
-  const keysFromProps:string[] = Object.keys(map).filter(key => props[key] !== undefined);
+const styledProps: StyledPropsFunction = (map, fallback) => props => {
+  const keysFromProps: string[] = Object.keys(map).filter(
+    key => props[key] !== undefined
+  );
   if (keysFromProps.length > 1) {
     if (process.env.NODE_ENV !== 'production') {
       // eslint-disable-next-line no-console
-      console.error(`[styledProps] Multiple props provided: ${keysFromProps.join(', ')}.`);
+      console.error(
+        `[styledProps] Multiple props provided: ${keysFromProps.join(', ')}.`
+      );
     }
   }
   const keyFromProps = keysFromProps[0];
@@ -22,10 +29,12 @@ const styledProps:StyledPropsFunction = (map, fallback) => ((props) => {
     }
     if (process.env.NODE_ENV !== 'production') {
       // eslint-disable-next-line no-console
-      console.error(`[styledProps] Unknown fallback prop provided: ${fallback}.`);
+      console.error(
+        `[styledProps] Unknown fallback prop provided: ${fallback}.`
+      );
     }
   }
   return undefined;
-});
+};
 
 export default styledProps;

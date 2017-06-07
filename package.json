@@ -10,7 +10,9 @@
     "compile": "babel -d lib src",
     "compile:watch": "babel -w -d lib src",
     "clean": "rm -rf lib",
-    "prepublish": "npm run clean && npm test && npm run compile"
+    "prepublish": "npm run clean && npm test && npm run compile",
+    "precommit": "lint-staged",
+    "format": "prettier --single-quote --trailing-comma=es5 --parser=flow --write \"src/**/*.js\""
   },
   "files": [
     "*.md",
@@ -32,6 +34,12 @@
     "css",
     "css-in-js"
   ],
+  "lint-staged": {
+    "*.js": [
+      "prettier --single-quote --trailing-comma=es5 --parser=babylon --write",
+      "git add"
+    ]
+  },
   "jest": {
     "collectCoverage": true,
     "coverageDirectory": "./.coverage",
@@ -54,7 +62,10 @@
     "eslint-plugin-jsx-a11y": "^5.0.0",
     "eslint-plugin-react": "^7.0.1",
     "flow-bin": "^0.47.0",
+    "husky": "^0.13.4",
     "jest": "^20.0.1",
+    "lint-staged": "^3.6.0",
+    "prettier": "^1.4.2",
     "publish-please": "^2.3.1",
     "react": "^15.5.4",
     "react-addons-test-utils": "^15.5.1",
