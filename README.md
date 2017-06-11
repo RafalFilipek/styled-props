@@ -66,9 +66,9 @@ So how can I help? `styled-props` package exports single function called `styled
 
 ### TL;DR; Examples
 
- - [Basic usage](http://www.webpackbin.com/N1EKUqgvG)
- - [Default props](http://www.webpackbin.com/41b0R5lPf)
- - [Bind](http://www.webpackbin.com/VJsMMoePf)
+ - [Basic usage](https://codesandbox.io/s/n5X21gBYR)
+ - [Default props](https://codesandbox.io/s/2k6VL6wgz)
+ - [Bind](https://codesandbox.io/s/gJxQvB1Bk)
 
 
 ### Installation
@@ -185,5 +185,3 @@ styledProps(stylesMap:Object, [fallbackKey]:string)
 
 styledPropsBind(collectionsMap:Object)
 ```
-
-### [Demo](http://www.webpackbin.com/NkSd_zRBM)
