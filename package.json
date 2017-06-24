@@ -55,7 +55,7 @@
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "enzyme": "^2.8.2",
-    "eslint": "^3.19.0",
+    "eslint": "^4.1.0",
     "eslint-config-airbnb": "^15.0.0",
     "eslint-plugin-flowtype-errors": "^3.3.0",
     "eslint-plugin-import": "^2.3.0",
