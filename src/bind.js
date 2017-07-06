@@ -1,3 +1,5 @@
+// @flow
+
 import styledProps from './styledProps';
 
 type PropsLike = { [key: string]: any };
