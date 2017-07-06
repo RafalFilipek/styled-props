@@ -2,6 +2,7 @@
 
 ---
 
+[![npm version](https://badge.fury.io/js/styled-props.svg)](https://badge.fury.io/js/styled-props)
 [![Greenkeeper badge](https://badges.greenkeeper.io/RafalFilipek/styled-props.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/RafalFilipek/styled-props.svg?branch=master)](https://travis-ci.org/RafalFilipek/styled-props)
 [![Code Coverage](https://img.shields.io/codecov/c/github/RafalFilipek/styled-props/master.svg)](https://codecov.io/gh/RafalFilipek/styled-props)
