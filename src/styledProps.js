@@ -9,7 +9,7 @@ export type StyledPropsFunction = (
 
 const styledProps: StyledPropsFunction = (map, fallback) => props => {
   const keysFromProps: string[] = Object.keys(map).filter(
-    key => props[key] !== undefined
+    key => !!props[key]
   );
   if (keysFromProps.length > 1) {
     if (process.env.NODE_ENV !== 'production') {
