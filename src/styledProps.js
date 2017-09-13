@@ -8,9 +8,7 @@ export type StyledPropsFunction = (
 ) => MapperFunction;
 
 const styledProps: StyledPropsFunction = (map, fallback) => props => {
-  const keysFromProps: string[] = Object.keys(map).filter(
-    key => !!props[key]
-  );
+  const keysFromProps: string[] = Object.keys(map).filter(key => !!props[key]);
   if (keysFromProps.length > 1) {
     if (process.env.NODE_ENV !== 'production') {
       // eslint-disable-next-line no-console
@@ -20,11 +18,11 @@ const styledProps: StyledPropsFunction = (map, fallback) => props => {
     }
   }
   const keyFromProps = keysFromProps[0];
-  if (map[keyFromProps]) {
+  if (map[keyFromProps] !== undefined) {
     return map[keyFromProps];
   }
   if (fallback) {
-    if (props[fallback] && map[props[fallback]]) {
+    if (props[fallback] && map[props[fallback]] !== undefined) {
       return map[props[fallback]];
     }
     if (process.env.NODE_ENV !== 'production') {
