@@ -6,7 +6,7 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/RafalFilipek/styled-props.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/RafalFilipek/styled-props.svg?branch=master)](https://travis-ci.org/RafalFilipek/styled-props)
 [![Code Coverage](https://img.shields.io/codecov/c/github/RafalFilipek/styled-props/master.svg)](https://codecov.io/gh/RafalFilipek/styled-props)
-[![downloads](https://img.shields.io/npm/dm/styled-props.svg)
+![downloads](https://img.shields.io/npm/dm/styled-props.svg)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 Simple lib that allows you to set *styled props* in your [*styled-components*](https://styled-components.com) without stress. Let's take `Button` component from styled-components web page. Here it is:
