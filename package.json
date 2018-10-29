@@ -57,7 +57,7 @@
     "flow-bin": "^0.73.0",
     "husky": "^0.14.3",
     "jest": "^22.1.4",
-    "lint-staged": "^7.0.0",
+    "lint-staged": "^8.0.2",
     "prettier": "^1.5.3",
     "publish-please": "^3.0.0",
     "react": "^16.0.0",
